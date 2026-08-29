@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  color-scheme: dark;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #121212;
+}
+
+
+.mat-mdc-button,
+.mat-mdc-unelevated-button,
+.mat-mdc-raised-button,
+.mat-mdc-outlined-button {
+  --mdc-text-button-container-shape: 4px;
+  --mdc-filled-button-container-shape: 4px;
+  --mdc-outlined-button-container-shape: 4px;
+
+  border-radius: 2px !important;
+}
