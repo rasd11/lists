@@ -20,3 +20,7 @@ body {
 
   border-radius: 2px !important;
 }
+
+pre {
+  font-family: "IBM Plex Sans", sans-serif;
+}
