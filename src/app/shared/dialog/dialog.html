@@ -1,0 +1,10 @@
+<ng-template #dialogTemplate >
+<h2 mat-dialog-title>{{ title() }}</h2>
+<mat-dialog-content  style="z-index: 999;min-width:500px" class="mat-typography">
+  <ng-content></ng-content>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button matButton mat-dialog-close (click)="emitCancel()">{{ cancelLabel() || 'Cancel' }}</button>
+  <button matButton [mat-dialog-close]="true" cdkFocusInitial (click)="emitSave()">{{ saveLabel() || 'Save' }}</button>
+</mat-dialog-actions>
+</ng-template>

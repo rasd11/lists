@@ -1,0 +1,20 @@
+<div style="display:flex;flex-direction:row; align-items: center;">
+    <div style=" display: flex; justify-content: center; align-items: center;">
+        <app-sidebar></app-sidebar>
+        <h2>{{ selectedSection()?.title }}</h2>
+    </div>
+    <div style="margin-left: auto; display: flex; justify-content: center; align-items: center;">
+        <button style="margin-left: auto;" matButton="elevated">Add Section</button>
+        <button style="margin-left: auto;" matButton="elevated">Delete Section</button>
+        <mat-form-field style="margin-left: auto;">
+            <mat-label>Section</mat-label>
+
+
+            <mat-select [(value)]="selectedSectionId">
+                @for (d of data()?.sections; track d.id) {
+                <mat-option style="min-width: 100%;" routerLinkActive="test" [value]="d.id">{{d.title}}</mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>

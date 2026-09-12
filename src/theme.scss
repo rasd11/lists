@@ -3,7 +3,7 @@
 html {
   @include mat.theme((
     color: (
-      primary: mat.$blue-palette,
+      primary: mat.$cyan-palette,
       theme-type: dark,
     ),
     typography: (

@@ -1,0 +1,20 @@
+<div>
+    <button matIconButton class="example-icon" aria-label="Example icon-button with menu icon"
+        (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-drawer-container class="example-container" [hasBackdrop]="true">
+        <mat-drawer #drawer [mode]="'over'">
+            <mat-nav-list>
+                @for (link of links(); track link.url) {
+                <a style="margin-bottom: 5px;" mat-list-item [routerLink]="link.url" routerLinkActive #rla="routerLinkActive"
+                    [activated]="rla.isActive" (click)="$event.preventDefault()">{{link.title}}</a> }
+            </mat-nav-list>
+        </mat-drawer>
+        <mat-drawer-content style="  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;">
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

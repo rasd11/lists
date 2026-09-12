@@ -1,0 +1,18 @@
+.example-container {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 1000;
+  background: transparent;
+  pointer-events: none;
+}
+
+.example-container ::ng-deep .mat-drawer-content {
+  pointer-events: none;
+}
+
+.example-container ::ng-deep .mat-drawer,
+.example-container ::ng-deep .mat-drawer-backdrop {
+  pointer-events: auto;
+}

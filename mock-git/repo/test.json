@@ -1,0 +1,1611 @@
+{
+  "metadata": {
+    "name": "Games",
+    "comment": "My finished games and personal rankings, organized by year and category."
+  },
+  "sections": [
+    {
+      "id": "2026",
+      "title": "2026",
+      "type": "year",
+      "itemDefinition": [
+        {
+          "name": "title",
+          "type": "string",
+          "comment": "Name of the game."
+        },
+        {
+          "name": "comment",
+          "type": "string",
+          "comment": "Additional notes about the game."
+        }
+      ],
+      "items": [
+        {
+          "id": 1,
+          "title": "Cairn",
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "title": "The Longest Journey",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "title": "Blue Prince",
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "title": "Routine",
+          "comment": ""
+        },
+        {
+          "id": 5,
+          "title": "Sekiro",
+          "comment": ""
+        },
+        {
+          "id": 6,
+          "title": "Lingo",
+          "comment": ""
+        },
+        {
+          "id": 7,
+          "title": "Black Myth: Wukong",
+          "comment": ""
+        },
+        {
+          "id": 8,
+          "title": "System Shock 2 remaster",
+          "comment": ""
+        },
+        {
+          "id": 9,
+          "title": "Demon's Souls PS5",
+          "comment": ""
+        },
+        {
+          "id": 10,
+          "title": "Pragmata",
+          "comment": ""
+        },
+        {
+          "id": 11,
+          "title": "Metroid Dread",
+          "comment": "ryubing"
+        },
+        {
+          "id": 12,
+          "title": "Lingo 2",
+          "comment": ""
+        },
+        {
+          "id": 13,
+          "title": "Reanimal",
+          "comment": ""
+        },
+        {
+          "id": 14,
+          "title": "Resident Evil Requiem",
+          "comment": ""
+        },
+        {
+          "id": 15,
+          "title": "Phonopolis",
+          "comment": ""
+        },
+        {
+          "id": 16,
+          "title": "Darwin's Paradox",
+          "comment": ""
+        }
+      ],
+      "subsections": [
+        {
+          "id": "replayed",
+          "title": "Replayed",
+          "itemDefinition": [
+            {
+              "name": "title",
+              "type": "string",
+              "comment": "Name of the game."
+            },
+            {
+              "name": "comment",
+              "type": "string",
+              "comment": "Additional notes about the replay."
+            }
+          ],
+          "items": [
+            {
+              "id": 1,
+              "title": "Luigi's mansion 3",
+              "comment": "Ryubing 120fps"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2025",
+      "title": "2025",
+      "type": "year",
+      "itemDefinition": [
+        {
+          "name": "title",
+          "type": "string",
+          "comment": "Name of the game."
+        },
+        {
+          "name": "comment",
+          "type": "string",
+          "comment": "Additional notes about the game."
+        }
+      ],
+      "items": [
+        {
+          "id": 1,
+          "title": "Baby Steps",
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "title": "Clair Obscur - Expedition 33",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "title": "Outer Wilds",
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "title": "Old Skies",
+          "comment": ""
+        },
+        {
+          "id": 5,
+          "title": "The Messenger",
+          "comment": ""
+        },
+        {
+          "id": 6,
+          "title": "Battletoads",
+          "comment": "NES/mesen"
+        },
+        {
+          "id": 7,
+          "title": "Castlevania - Symphony of the Night",
+          "comment": "PS1/Duckstation"
+        },
+        {
+          "id": 8,
+          "title": "Indiana Jones and the Great Circle",
+          "comment": ""
+        },
+        {
+          "id": 9,
+          "title": "Hollow Knight Silksong",
+          "comment": "incl ACT3"
+        },
+        {
+          "id": 10,
+          "title": "Pipistrello and the Cursed Yoyo",
+          "comment": ""
+        },
+        {
+          "id": 11,
+          "title": "Inscryption",
+          "comment": ""
+        },
+        {
+          "id": 12,
+          "title": "Fire 'n ice",
+          "comment": "NES/mesen"
+        },
+        {
+          "id": 13,
+          "title": "Yakuza: Like a dragon",
+          "comment": ""
+        },
+        {
+          "id": 14,
+          "title": "Gabriel Knight: Sins of the Fathers 20th Anniversary Edition",
+          "comment": ""
+        },
+        {
+          "id": 15,
+          "title": "The Drifter",
+          "comment": ""
+        },
+        {
+          "id": 16,
+          "title": "Foolish Mortals",
+          "comment": ""
+        },
+        {
+          "id": 17,
+          "title": "Metroid Prime 3: Corruption",
+          "comment": "Primehack"
+        },
+        {
+          "id": 18,
+          "title": "Dead Space Remake",
+          "comment": "PS5"
+        },
+        {
+          "id": 19,
+          "title": "Woodworm",
+          "comment": "full steam release"
+        },
+        {
+          "id": 20,
+          "title": "Tunic",
+          "comment": ""
+        },
+        {
+          "id": 21,
+          "title": "Death Stranding 2",
+          "comment": ""
+        },
+        {
+          "id": 22,
+          "title": "Bonfire Peaks",
+          "comment": "DLC Lost Memories Part I+II+III"
+        },
+        {
+          "id": 23,
+          "title": "Spider-man 2",
+          "comment": ""
+        },
+        {
+          "id": 24,
+          "title": "The Last of Us Part II",
+          "comment": ""
+        },
+        {
+          "id": 25,
+          "title": "SteamWorld Dig 2",
+          "comment": ""
+        },
+        {
+          "id": 26,
+          "title": "Ooo",
+          "comment": ""
+        },
+        {
+          "id": 27,
+          "title": "Supraland",
+          "comment": ""
+        },
+        {
+          "id": 28,
+          "title": "Plants vs Zombies",
+          "comment": ""
+        },
+        {
+          "id": 29,
+          "title": "Lab Rat",
+          "comment": ""
+        },
+        {
+          "id": 30,
+          "title": "Rokin Kats",
+          "comment": "secret ending, NES/mesen"
+        },
+        {
+          "id": 31,
+          "title": "Jungle Book",
+          "comment": "NES/mesen"
+        },
+        {
+          "id": 32,
+          "title": "Aladdin",
+          "comment": "SNES/mesen"
+        },
+        {
+          "id": 33,
+          "title": "Super C",
+          "comment": "NES/mesen"
+        },
+        {
+          "id": 34,
+          "title": "Contra",
+          "comment": "NES/mesen"
+        }
+      ],
+      "subsections": [
+        {
+          "id": "replayed",
+          "title": "Replayed",
+          "itemDefinition": [
+            {
+              "name": "title",
+              "type": "string",
+              "comment": "Name of the game."
+            },
+            {
+              "name": "comment",
+              "type": "string",
+              "comment": "Additional notes about the replay."
+            }
+          ],
+          "items": [
+            {
+              "id": 1,
+              "title": "Jedi Survivor",
+              "comment": "PS5"
+            },
+            {
+              "id": 2,
+              "title": "Jedi Fallen Order",
+              "comment": "PS5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2024",
+      "title": "2024",
+      "type": "year",
+      "itemDefinition": [
+        {
+          "name": "title",
+          "type": "string",
+          "comment": "Name of the game."
+        },
+        {
+          "name": "comment",
+          "type": "string",
+          "comment": "Additional notes about the game."
+        }
+      ],
+      "items": [
+        {
+          "id": 1,
+          "title": "Cyberpunk 2077 + Phantom Liberty",
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "title": "God of War Ragnarok",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "title": "Star Wars Jedi: Fallen Order",
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "title": "Star Wars Jedi: Survivor",
+          "comment": ""
+        },
+        {
+          "id": 5,
+          "title": "Prey 2017",
+          "comment": ""
+        },
+        {
+          "id": 6,
+          "title": "Persona 3 Reload",
+          "comment": ""
+        },
+        {
+          "id": 7,
+          "title": "Metaphor: ReFantazio",
+          "comment": ""
+        },
+        {
+          "id": 8,
+          "title": "Riven 2024",
+          "comment": ""
+        },
+        {
+          "id": 9,
+          "title": "Leaf's Odyssey",
+          "comment": ""
+        },
+        {
+          "id": 10,
+          "title": "OlliOlli World",
+          "comment": ""
+        },
+        {
+          "id": 11,
+          "title": "Death Stranding",
+          "comment": ""
+        },
+        {
+          "id": 12,
+          "title": "Nine Sols",
+          "comment": ""
+        },
+        {
+          "id": 13,
+          "title": "Super Mario Galaxy",
+          "comment": "Switch"
+        },
+        {
+          "id": 14,
+          "title": "Metroid Prime 2: Echoes",
+          "comment": "Primehack"
+        },
+        {
+          "id": 15,
+          "title": "Hogwarts Legacy",
+          "comment": ""
+        },
+        {
+          "id": 16,
+          "title": "Little Nightmares II",
+          "comment": ""
+        },
+        {
+          "id": 17,
+          "title": "Little Nightmares I + DLC",
+          "comment": ""
+        },
+        {
+          "id": 18,
+          "title": "Woodworm",
+          "comment": "https://spratt.itch.io/woodworm"
+        },
+        {
+          "id": 19,
+          "title": "Pacific Drive",
+          "comment": ""
+        },
+        {
+          "id": 20,
+          "title": "Animal Well",
+          "comment": ""
+        },
+        {
+          "id": 21,
+          "title": "Super Mario Galaxy 2",
+          "comment": "Dolphin"
+        },
+        {
+          "id": 22,
+          "title": "Silent Hill 2 Remake",
+          "comment": ""
+        },
+        {
+          "id": 23,
+          "title": "The Legend of Zelda: The Minish Cap",
+          "comment": "GBA"
+        },
+        {
+          "id": 24,
+          "title": "World of Goo 2",
+          "comment": ""
+        },
+        {
+          "id": 25,
+          "title": "Indika",
+          "comment": ""
+        },
+        {
+          "id": 26,
+          "title": "Night in the Woods",
+          "comment": ""
+        },
+        {
+          "id": 27,
+          "title": "Signalis",
+          "comment": ""
+        },
+        {
+          "id": 28,
+          "title": "Mind Over Magnet",
+          "comment": ""
+        },
+        {
+          "id": 29,
+          "title": "Braid Anniversary",
+          "comment": ""
+        }
+      ]
+    },
+    {
+      "id": "2023",
+      "title": "2023",
+      "type": "year",
+      "itemDefinition": [
+        {
+          "name": "title",
+          "type": "string",
+          "comment": "Name of the game."
+        },
+        {
+          "name": "comment",
+          "type": "string",
+          "comment": "Additional notes about the game."
+        }
+      ],
+      "items": [
+        {
+          "id": 1,
+          "title": "can of wormholes",
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "title": "elden ring",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "title": "system shock remake",
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "title": "baldur's gate 3",
+          "comment": ""
+        },
+        {
+          "id": 5,
+          "title": "zelda totk",
+          "comment": ""
+        },
+        {
+          "id": 6,
+          "title": "metroid prime remaster",
+          "comment": ""
+        },
+        {
+          "id": 7,
+          "title": "beneath a steel sky",
+          "comment": ""
+        },
+        {
+          "id": 8,
+          "title": "resident evil 4 remake",
+          "comment": ""
+        },
+        {
+          "id": 9,
+          "title": "bonfire peaks",
+          "comment": ""
+        },
+        {
+          "id": 10,
+          "title": "cocoon",
+          "comment": ""
+        },
+        {
+          "id": 11,
+          "title": "ugly",
+          "comment": ""
+        },
+        {
+          "id": 12,
+          "title": "the dig",
+          "comment": ""
+        },
+        {
+          "id": 13,
+          "title": "hob's barrow",
+          "comment": ""
+        },
+        {
+          "id": 14,
+          "title": "axiom verge",
+          "comment": ""
+        },
+        {
+          "id": 15,
+          "title": "celeste",
+          "comment": ""
+        },
+        {
+          "id": 16,
+          "title": "ghost trick",
+          "comment": ""
+        },
+        {
+          "id": 17,
+          "title": "battletoads and double dragon",
+          "comment": "NES"
+        },
+        {
+          "id": 18,
+          "title": "septerra core",
+          "comment": ""
+        },
+        {
+          "id": 19,
+          "title": "puddle knights",
+          "comment": ""
+        }
+      ]
+    },
+    {
+      "id": "unknown",
+      "title": "UNKNOWN",
+      "type": "year",
+      "comment": "Finished in previous years, order is random for now.",
+      "itemDefinition": [
+        {
+          "name": "title",
+          "type": "string",
+          "comment": "Name of the game."
+        },
+        {
+          "name": "comment",
+          "type": "string",
+          "comment": "Additional notes about the game."
+        }
+      ],
+      "items": [
+        {
+          "id": 1,
+          "title": "Persona 5/Royal",
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "title": "Persona 4 golden",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "title": "Bloodborne",
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "title": "Last of us 1 remaster ps4",
+          "comment": ""
+        },
+        {
+          "id": 5,
+          "title": "Uncharted 4/Lost Legacy",
+          "comment": ""
+        },
+        {
+          "id": 6,
+          "title": "Spiderman ps4",
+          "comment": ""
+        },
+        {
+          "id": 7,
+          "title": "God of war",
+          "comment": ""
+        },
+        {
+          "id": 8,
+          "title": "Shadow of the colosus ps4",
+          "comment": ""
+        },
+        {
+          "id": 9,
+          "title": "the last guardian ps4",
+          "comment": ""
+        },
+        {
+          "id": 10,
+          "title": "Red Dead Redemption 2",
+          "comment": ""
+        },
+        {
+          "id": 11,
+          "title": "GTA 5",
+          "comment": ""
+        },
+        {
+          "id": 12,
+          "title": "GTA 4",
+          "comment": ""
+        },
+        {
+          "id": 13,
+          "title": "Resident Evil 7",
+          "comment": ""
+        },
+        {
+          "id": 14,
+          "title": "Resident Evil 2 remake",
+          "comment": ""
+        },
+        {
+          "id": 15,
+          "title": "Resident Evil 8",
+          "comment": ""
+        },
+        {
+          "id": 16,
+          "title": "Resident Evil 3 remake",
+          "comment": ""
+        },
+        {
+          "id": 17,
+          "title": "Zelda Breath of the Wild",
+          "comment": ""
+        },
+        {
+          "id": 18,
+          "title": "Wasteland 3",
+          "comment": ""
+        },
+        {
+          "id": 19,
+          "title": "Portal",
+          "comment": ""
+        },
+        {
+          "id": 20,
+          "title": "Portal 2",
+          "comment": ""
+        },
+        {
+          "id": 21,
+          "title": "Half Life 2 + Episodes",
+          "comment": ""
+        },
+        {
+          "id": 22,
+          "title": "Batman Arkham Asylum",
+          "comment": ""
+        },
+        {
+          "id": 23,
+          "title": "Batman Arkham City",
+          "comment": ""
+        },
+        {
+          "id": 24,
+          "title": "Batman Arkham Knight",
+          "comment": ""
+        },
+        {
+          "id": 25,
+          "title": "Batman Arkham Origins",
+          "comment": ""
+        },
+        {
+          "id": 26,
+          "title": "Shadow of Mordor",
+          "comment": ""
+        },
+        {
+          "id": 27,
+          "title": "Shadow of War",
+          "comment": ""
+        },
+        {
+          "id": 28,
+          "title": "Divinity Original Sin",
+          "comment": ""
+        },
+        {
+          "id": 29,
+          "title": "Divinity Original Sin 2",
+          "comment": ""
+        },
+        {
+          "id": 30,
+          "title": "Final Fantasy X",
+          "comment": ""
+        },
+        {
+          "id": 31,
+          "title": "Hollow Knight",
+          "comment": ""
+        },
+        {
+          "id": 32,
+          "title": "Trials Evolution",
+          "comment": ""
+        },
+        {
+          "id": 33,
+          "title": "Trials Fusion",
+          "comment": ""
+        },
+        {
+          "id": 34,
+          "title": "Mark of the Ninja",
+          "comment": ""
+        },
+        {
+          "id": 35,
+          "title": "Stardew Valley",
+          "comment": ""
+        },
+        {
+          "id": 36,
+          "title": "Burnout Paradise",
+          "comment": ""
+        },
+        {
+          "id": 37,
+          "title": "Flatout 2",
+          "comment": ""
+        },
+        {
+          "id": 38,
+          "title": "Flatout ultimate carnage",
+          "comment": ""
+        },
+        {
+          "id": 39,
+          "title": "Cuphead",
+          "comment": ""
+        },
+        {
+          "id": 40,
+          "title": "Owlboy",
+          "comment": ""
+        },
+        {
+          "id": 41,
+          "title": "Eastward",
+          "comment": ""
+        },
+        {
+          "id": 42,
+          "title": "Wolfenstein: The New Order",
+          "comment": ""
+        },
+        {
+          "id": 43,
+          "title": "King's Bounty The Legend + Armored Princess",
+          "comment": ""
+        },
+        {
+          "id": 44,
+          "title": "The Witcher 3",
+          "comment": ""
+        },
+        {
+          "id": 45,
+          "title": "The Witcher 2",
+          "comment": ""
+        },
+        {
+          "id": 46,
+          "title": "The Witcher 1",
+          "comment": ""
+        },
+        {
+          "id": 47,
+          "title": "Guacamelee!",
+          "comment": ""
+        },
+        {
+          "id": 48,
+          "title": "Guacamelee 2",
+          "comment": ""
+        },
+        {
+          "id": 49,
+          "title": "Control",
+          "comment": ""
+        },
+        {
+          "id": 50,
+          "title": "Max Payne 3",
+          "comment": ""
+        },
+        {
+          "id": 51,
+          "title": "F.E.A.R 1 + 2",
+          "comment": ""
+        },
+        {
+          "id": 52,
+          "title": "Gorky 17",
+          "comment": ""
+        },
+        {
+          "id": 53,
+          "title": "Re-Volt",
+          "comment": ""
+        },
+        {
+          "id": 54,
+          "title": "Mad Max",
+          "comment": ""
+        },
+        {
+          "id": 55,
+          "title": "Just Cause 3",
+          "comment": ""
+        },
+        {
+          "id": 56,
+          "title": "Aquaria",
+          "comment": ""
+        },
+        {
+          "id": 57,
+          "title": "Metro 2033",
+          "comment": ""
+        },
+        {
+          "id": 58,
+          "title": "Metro Last Light",
+          "comment": ""
+        },
+        {
+          "id": 59,
+          "title": "Snake Pass",
+          "comment": ""
+        },
+        {
+          "id": 60,
+          "title": "ibb & obb",
+          "comment": ""
+        },
+        {
+          "id": 61,
+          "title": "Teslagrad",
+          "comment": ""
+        },
+        {
+          "id": 62,
+          "title": "Teslagrad 2",
+          "comment": ""
+        },
+        {
+          "id": 63,
+          "title": "Overcooked",
+          "comment": ""
+        },
+        {
+          "id": 64,
+          "title": "Watch Dogs 1",
+          "comment": ""
+        },
+        {
+          "id": 65,
+          "title": "Watch Dogs 2",
+          "comment": ""
+        },
+        {
+          "id": 66,
+          "title": "Torchlight",
+          "comment": ""
+        },
+        {
+          "id": 67,
+          "title": "Torchlight 2",
+          "comment": ""
+        },
+        {
+          "id": 68,
+          "title": "Tomb Raider",
+          "comment": ""
+        },
+        {
+          "id": 69,
+          "title": "Lara Croft and the Guardian of Light",
+          "comment": ""
+        },
+        {
+          "id": 70,
+          "title": "Elasto Mania",
+          "comment": ""
+        },
+        {
+          "id": 71,
+          "title": "Diablo 2: Lord of Destruction",
+          "comment": ""
+        },
+        {
+          "id": 72,
+          "title": "Diablo 3",
+          "comment": ""
+        },
+        {
+          "id": 73,
+          "title": "Dungeon Siege 2",
+          "comment": ""
+        },
+        {
+          "id": 74,
+          "title": "Need for Speed: Underground",
+          "comment": ""
+        },
+        {
+          "id": 75,
+          "title": "Need for Speed: Underground 2",
+          "comment": ""
+        },
+        {
+          "id": 76,
+          "title": "Need for Speed: Most Wanted",
+          "comment": ""
+        },
+        {
+          "id": 77,
+          "title": "Need for Speed: Hot Pursuit 2010",
+          "comment": ""
+        },
+        {
+          "id": 78,
+          "title": "Need for Speed: Most Wanted 2012",
+          "comment": ""
+        },
+        {
+          "id": 79,
+          "title": "Need for Speed: Rivals",
+          "comment": ""
+        },
+        {
+          "id": 80,
+          "title": "Split/Second",
+          "comment": ""
+        },
+        {
+          "id": 81,
+          "title": "Super Mario Odyssey",
+          "comment": ""
+        },
+        {
+          "id": 82,
+          "title": "Chariot",
+          "comment": ""
+        },
+        {
+          "id": 83,
+          "title": "Snipperclips",
+          "comment": ""
+        },
+        {
+          "id": 84,
+          "title": "Lovers in a Dangerous Spacetime",
+          "comment": ""
+        },
+        {
+          "id": 85,
+          "title": "Brothers: A Tale of Two Sons",
+          "comment": ""
+        },
+        {
+          "id": 86,
+          "title": "River City Ransom Underground",
+          "comment": ""
+        },
+        {
+          "id": 87,
+          "title": "Stranglehold",
+          "comment": ""
+        },
+        {
+          "id": 88,
+          "title": "Mario & Luigi: Bowser's Inside Story",
+          "comment": "DS"
+        },
+        {
+          "id": 89,
+          "title": "Luigi's Mansion: Dark Moon",
+          "comment": "3DS"
+        },
+        {
+          "id": 90,
+          "title": "Phoenix Wright: Ace Attorney",
+          "comment": "DS"
+        },
+        {
+          "id": 91,
+          "title": "The Flintstones: Surprise at Dinosaur Peak!",
+          "comment": "NES"
+        },
+        {
+          "id": 92,
+          "title": "Tiny Toon Adventures",
+          "comment": "NES"
+        },
+        {
+          "id": 93,
+          "title": "Wacky Races",
+          "comment": "NES"
+        },
+        {
+          "id": 94,
+          "title": "Chip 'n Dale Rescue Rangers",
+          "comment": "NES"
+        },
+        {
+          "id": 95,
+          "title": "Chip 'n Dale Rescue Rangers 2",
+          "comment": "NES"
+        },
+        {
+          "id": 96,
+          "title": "Mighty Final Fight",
+          "comment": "NES"
+        },
+        {
+          "id": 97,
+          "title": "Mario & Luigi: Partners in Time",
+          "comment": "DS"
+        },
+        {
+          "id": 98,
+          "title": "Unmechanical",
+          "comment": ""
+        },
+        {
+          "id": 99,
+          "title": "Bad Dudes",
+          "comment": "NES"
+        }
+      ]
+    },
+    {
+      "id": "point-and-click",
+      "title": "Top Finished point and click games",
+      "type": "ranking",
+      "itemDefinition": [
+        {
+          "name": "title",
+          "type": "string",
+          "comment": "Name of the game."
+        },
+        {
+          "name": "comment",
+          "type": "string",
+          "comment": "Additional notes about the game."
+        }
+      ],
+      "items": [
+        {
+          "id": 1,
+          "title": "The Whispered World",
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "title": "Primordia",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "title": "Broken Sword 1",
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "title": "The Longest Journey",
+          "comment": ""
+        },
+        {
+          "id": 5,
+          "title": "The Curse of Monkey Island",
+          "comment": ""
+        },
+        {
+          "id": 6,
+          "title": "Syberia",
+          "comment": ""
+        },
+        {
+          "id": 7,
+          "title": "Syberia 2",
+          "comment": ""
+        },
+        {
+          "id": 8,
+          "title": "Blackwell Series",
+          "comment": ""
+        },
+        {
+          "id": 9,
+          "title": "Technobabylon",
+          "comment": ""
+        },
+        {
+          "id": 10,
+          "title": "Gemini Rue",
+          "comment": ""
+        },
+        {
+          "id": 11,
+          "title": "Resonance",
+          "comment": ""
+        },
+        {
+          "id": 12,
+          "title": "Gabriel Knight Sins of the Fathers",
+          "comment": ""
+        },
+        {
+          "id": 13,
+          "title": "Beneath a Steel Sky",
+          "comment": ""
+        },
+        {
+          "id": 14,
+          "title": "Old Skies",
+          "comment": ""
+        },
+        {
+          "id": 15,
+          "title": "Unavowed",
+          "comment": ""
+        },
+        {
+          "id": 16,
+          "title": "The Excavation of Hob’s Barrow",
+          "comment": ""
+        },
+        {
+          "id": 17,
+          "title": "Grim Fandango",
+          "comment": ""
+        },
+        {
+          "id": 18,
+          "title": "Still Life",
+          "comment": ""
+        },
+        {
+          "id": 19,
+          "title": "Broken Sword 2",
+          "comment": ""
+        },
+        {
+          "id": 20,
+          "title": "Day Of the Tentacle",
+          "comment": ""
+        },
+        {
+          "id": 21,
+          "title": "Runaway 1-3",
+          "comment": ""
+        },
+        {
+          "id": 22,
+          "title": "Foolish Mortals",
+          "comment": ""
+        },
+        {
+          "id": 23,
+          "title": "The Drifter",
+          "comment": ""
+        },
+        {
+          "id": 24,
+          "title": "The Dig",
+          "comment": ""
+        },
+        {
+          "id": 25,
+          "title": "Full Throttle",
+          "comment": ""
+        },
+        {
+          "id": 26,
+          "title": "Deponia Series",
+          "comment": ""
+        },
+        {
+          "id": 27,
+          "title": "Tony Tough and the Night of the Roasted Moths",
+          "comment": ""
+        },
+        {
+          "id": 28,
+          "title": "Strangeland",
+          "comment": ""
+        }
+      ]
+    },
+    {
+      "id": "puzzle",
+      "title": "Top puzzle games",
+      "type": "ranking",
+      "itemDefinition": [
+        {
+          "name": "title",
+          "type": "string",
+          "comment": "Name of the game."
+        },
+        {
+          "name": "comment",
+          "type": "string",
+          "comment": "Additional notes about the game. Difficulty is rated from 1 to 5."
+        }
+      ],
+      "items": [
+        {
+          "id": 1,
+          "title": "Steven's Sausage Rolls",
+          "comment": "5"
+        },
+        {
+          "id": 2,
+          "title": "Baba Is You",
+          "comment": "5"
+        },
+        {
+          "id": 3,
+          "title": "Can of Wormholes",
+          "comment": "4"
+        },
+        {
+          "id": 4,
+          "title": "Bloxorz",
+          "comment": "2"
+        },
+        {
+          "id": 5,
+          "title": "Catherine",
+          "comment": "3"
+        },
+        {
+          "id": 6,
+          "title": "SpaceChem",
+          "comment": "4"
+        },
+        {
+          "id": 7,
+          "title": "Snakebird",
+          "comment": "4"
+        },
+        {
+          "id": 8,
+          "title": "TIS-100",
+          "comment": "4"
+        },
+        {
+          "id": 9,
+          "title": "Limbo",
+          "comment": "3"
+        },
+        {
+          "id": 10,
+          "title": "Riven 2024",
+          "comment": "4"
+        },
+        {
+          "id": 11,
+          "title": "Portal 2",
+          "comment": "2"
+        },
+        {
+          "id": 12,
+          "title": "Picross 3D",
+          "comment": "4"
+        },
+        {
+          "id": 13,
+          "title": "Antichamber",
+          "comment": "3"
+        },
+        {
+          "id": 14,
+          "title": "Fire'n Ice",
+          "comment": "3, NES"
+        },
+        {
+          "id": 15,
+          "title": "Human Fall Flat",
+          "comment": "2"
+        },
+        {
+          "id": 16,
+          "title": "Fract OSC",
+          "comment": "2"
+        },
+        {
+          "id": 17,
+          "title": "Armadillo Run",
+          "comment": "3"
+        },
+        {
+          "id": 18,
+          "title": "Blast Miner",
+          "comment": "2"
+        },
+        {
+          "id": 19,
+          "title": "Toki Tori 2",
+          "comment": "3"
+        },
+        {
+          "id": 20,
+          "title": "Full Bore",
+          "comment": "3"
+        },
+        {
+          "id": 21,
+          "title": "Stealth Inc 2 (Stealth Bastard 2)",
+          "comment": "3"
+        },
+        {
+          "id": 22,
+          "title": "The Last Guardian",
+          "comment": "3"
+        },
+        {
+          "id": 23,
+          "title": "Bonfire Peaks",
+          "comment": "4"
+        },
+        {
+          "id": 24,
+          "title": "Leaf's Odyssey",
+          "comment": "4"
+        },
+        {
+          "id": 25,
+          "title": "Escape Goat 2",
+          "comment": "3"
+        },
+        {
+          "id": 26,
+          "title": "Stealth Bastard",
+          "comment": "3"
+        },
+        {
+          "id": 27,
+          "title": "Portal 1",
+          "comment": "2"
+        },
+        {
+          "id": 28,
+          "title": "Kine",
+          "comment": "4"
+        },
+        {
+          "id": 29,
+          "title": "Picross 3D Round 2",
+          "comment": "4"
+        },
+        {
+          "id": 30,
+          "title": "Vessel",
+          "comment": "3"
+        },
+        {
+          "id": 31,
+          "title": "Machinarium",
+          "comment": "3"
+        },
+        {
+          "id": 32,
+          "title": "Cocoon",
+          "comment": "1"
+        },
+        {
+          "id": 33,
+          "title": "Creaks",
+          "comment": "3"
+        },
+        {
+          "id": 34,
+          "title": "Ugly",
+          "comment": "3"
+        },
+        {
+          "id": 35,
+          "title": "Braid",
+          "comment": "3"
+        },
+        {
+          "id": 36,
+          "title": "Inside",
+          "comment": "2"
+        },
+        {
+          "id": 37,
+          "title": "Infinifactory",
+          "comment": "4"
+        },
+        {
+          "id": 38,
+          "title": "Woodworm",
+          "comment": "4"
+        },
+        {
+          "id": 39,
+          "title": "The Bridge",
+          "comment": "3"
+        },
+        {
+          "id": 40,
+          "title": "Obulis",
+          "comment": "2"
+        },
+        {
+          "id": 41,
+          "title": "P.B. Winterbottom",
+          "comment": "2"
+        },
+        {
+          "id": 42,
+          "title": "The Witness",
+          "comment": "3"
+        },
+        {
+          "id": 43,
+          "title": "The Talos Principle",
+          "comment": "3"
+        },
+        {
+          "id": 44,
+          "title": "Fez",
+          "comment": "3"
+        },
+        {
+          "id": 45,
+          "title": "Quantum Conundrum",
+          "comment": "2"
+        }
+      ]
+    },
+    {
+      "id": "platformers",
+      "title": "Top finished platformers",
+      "type": "ranking",
+      "itemDefinition": [
+        {
+          "name": "title",
+          "type": "string",
+          "comment": "Name of the game."
+        },
+        {
+          "name": "comment",
+          "type": "string",
+          "comment": "Additional notes about the game."
+        }
+      ],
+      "items": [
+        {
+          "id": 1,
+          "title": "Donkey Kong Country 2",
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "title": "Donkey Kong Country 3",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "title": "Donkey Kong Country 1",
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "title": "Super Meat Boy",
+          "comment": ""
+        },
+        {
+          "id": 5,
+          "title": "Rayman Legends",
+          "comment": ""
+        },
+        {
+          "id": 6,
+          "title": "Rayman Origins",
+          "comment": ""
+        },
+        {
+          "id": 7,
+          "title": "Remnants of Naezith",
+          "comment": ""
+        },
+        {
+          "id": 8,
+          "title": "Donkey Kong Tropical Freeze",
+          "comment": ""
+        },
+        {
+          "id": 9,
+          "title": "Donkey Kong Returns",
+          "comment": ""
+        }
+      ]
+    }
+  ]
+}

@@ -12,6 +12,7 @@ export type ListField = {
 };
 
 export type ListItem = {
+  id: number;
   [field: string]: unknown;
 };
 
@@ -30,4 +31,12 @@ export type List = {
   };
 
   sections: ListSection[];
+};
+
+export type ObjectSnapshot<T> = {
+  data: T;
+  name:string;
+  sha: string;
+  syncDate: Date;
+  lastModified: Date;
 };

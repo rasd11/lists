@@ -1,29 +1,71 @@
 @if (data()) {
 
 
-@for (section of data().sections; track section.id) {
-    <h2>{{ section.title }}</h2>
+@if (selectedSection()!==null&&data()?.sections) {
+<div style="display:flex;flex-direction:column;">
+    <app-header></app-header>
+    <table mat-table [dataSource]="selectedSection()!.items" class="mat-elevation-z2" cdkDropList
+        (cdkDropListDropped)="drop($event)" cdkDropListData="dataSource">
+        <ng-container matColumnDef="position" sticky>
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td cdkDragHandle mat-cell *matCellDef="let element;let index = index">
+                <span style="display:inline-flex;align-items:center;">
+                    <mat-icon class="example-drag-cursor">reorder</mat-icon>
+                    <span style="margin-left: 8px;">{{index + 1}}</span>
+                </span>
+            </td>
+        </ng-container>
 
-<table mat-table [dataSource]="section.items" class="mat-elevation-z2">
-    <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>ID</th>
-        <td mat-cell *matCellDef="let row; let i = index">{{ i+1 }}</td>
-    </ng-container>
+        @for (item of data()?.sections?.[0]?.itemDefinition ?? []; track item.name) {
+        <ng-container [matColumnDef]="item.name">
+            <th mat-header-cell *matHeaderCellDef>{{ item.name }}</th>
+            <td mat-cell *matCellDef="let row">{{ row[item.name] }}</td>
+        </ng-container>
 
-    @for (item of data().sections[0].itemDefinition; track item.name) {
-    <ng-container [matColumnDef]="item.name">
-        <th mat-header-cell *matHeaderCellDef>{{ item.name }}</th>
-        <td mat-cell *matCellDef="let row">{{ row[item.name] }}</td>
-    </ng-container>
-    }
+        }
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let row; let i = index">
+                <button (click)="openEditor('EDIT',selectedSection(),row)" style="width:28px;height:28px;" matMiniFab
+                    aria-label="Example icon button with a menu icon">
+                    <mat-icon style="font-size: 20px;width:20px;height:20px;">edit</mat-icon>
+                </button>
+                <button (click)="delete.set({ sectionId: selectedSection()!.id, itemId: row.id, title: row.title })"
+                    matMiniFab style="margin-left: 8px;width:28px;height:28px;"
+                    aria-label="Example icon button with a menu icon">
+                    <mat-icon style="font-size: 20px;width:20px;height:20px;">delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
 
+        <!-- <mat-header-row *matHeaderRowDef="columns()"></mat-header-row> -->
+        <!-- <mat-row *matRowDef="let row; columns: columns();" cdkDrag [cdkDragData]="row"></mat-row> -->
+        <tr mat-header-row style="position: sticky; top: 0;z-index: 999;" *matHeaderRowDef="columns()"></tr>
+        <tr mat-row cdkDrag [cdkDragData]="row" *matRowDef="let row; columns: columns();"></tr>
+    </table>
+    <br />
 
-    <tr mat-header-row *matHeaderRowDef="columns()"></tr>
-    <tr mat-row *matRowDef="let row; columns: columns();"></tr>
-</table>
-<br />
+    <button (click)="openEditor('CREATE',selectedSection(),null)" matMiniFab
+        style="position:sticky;bottom:16px;margin-left: auto;margin-right: 16px;width:35px;height:35px;"
+        aria-label="Example icon button with a menu icon">
+        <mat-icon style="font-size: 35px;width:35px;height:35px;">add</mat-icon>
+    </button>
+</div>
 }
 }
 @else {
 <p>Data not loaded yet</p>
+}
+
+
+
+<app-editor (cancel)="onCancel()" (save)="onSave($event)" [open]="openEditorDialog()" [mode]="mode()"
+    [definition]="editSection()?.itemDefinition || null" [data]="editItem()"></app-editor>
+
+
+@if (delete() !== null) {
+<app-dialog (cancel)="delete.set(null)" (save)="onDeleteConfirmed()" [open]="delete() !== null" title="Confirm Delete"
+    saveLabel="Delete" cancelLabel="Cancel">
+    <p>Are you sure you want to delete item with title "{{ delete()?.title }}"?</p>
+</app-dialog>
 }

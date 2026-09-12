@@ -1,0 +1,12 @@
+<app-dialog title="Edit Item" [open]="open()" (cancel)="onCancel()" (save)="onSave()">
+  @for (field of definition(); track field.name) {
+  @if (field.type === 'string') {
+  <mat-form-field style="min-width: 100%;" class="example-full-width">
+    <mat-label>{{field.name}}</mat-label>
+    <input matInput placeholder={{field.comment}} [ngModel]="getFieldValue(field.name)" (ngModelChange)="updateField(field.name, $event)"  >
+  </mat-form-field>
+  <br>
+
+  }
+  }
+</app-dialog>
