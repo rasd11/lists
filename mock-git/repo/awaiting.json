@@ -3,65 +3,145 @@
     "name": "Awaiting",
     "comment": "Wait list (cautiously optimistic, some games may be bad)."
   },
+  "itemDefinition": [
+    {
+      "name": "title",
+      "type": "string",
+      "comment": "Name of the game."
+    },
+    {
+      "name": "comment",
+      "type": "string",
+      "comment": "Additional notes about the game."
+    }
+  ],
   "sections": [
     {
       "id": "wait-list",
       "title": "Wait list",
       "type": "year",
-      "itemDefinition": [
+      "items": [
         {
-          "name": "title",
-          "type": "string",
-          "comment": "Name of the game."
+          "id": 1,
+          "title": "GTA 6",
+          "comment": "19 november"
         },
         {
-          "name": "comment",
-          "type": "string",
-          "comment": "Release date or notes."
+          "id": 2,
+          "title": "Croak",
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "title": "Fable",
+          "comment": "Feb 2027"
+        },
+        {
+          "id": 4,
+          "title": "The button effect",
+          "comment": "Q1 2027"
+        },
+        {
+          "id": 5,
+          "title": "Order of the sinking star",
+          "comment": "8 oct 2026"
+        },
+        {
+          "id": 6,
+          "title": "Wolverine(PS5)",
+          "comment": "September 15"
+        },
+        {
+          "id": 7,
+          "title": "STAR WARS: Galactic Racer™",
+          "comment": "6 october 2026"
+        },
+        {
+          "id": 8,
+          "title": "The eternal life of goldman",
+          "comment": ""
+        },
+        {
+          "id": 9,
+          "title": "Intergalactic: The Heretic Prophet",
+          "comment": ""
+        },
+        {
+          "id": 10,
+          "title": "Star Wars: Zero Company",
+          "comment": "aug 27 2026"
+        },
+        {
+          "id": 11,
+          "title": "Clive Barker's Hellraiser: Revival",
+          "comment": ""
+        },
+        {
+          "id": 12,
+          "title": "End of Abyss",
+          "comment": "oct 1 2026"
+        },
+        {
+          "id": 13,
+          "title": "Gilt",
+          "comment": ""
+        },
+        {
+          "id": 14,
+          "title": "Bradley the badger",
+          "comment": ""
+        },
+        {
+          "id": 15,
+          "title": "Judas",
+          "comment": ""
+        },
+        {
+          "id": 16,
+          "title": "Clockwork Revolution",
+          "comment": "2027"
+        },
+        {
+          "id": 17,
+          "title": "PVKK: Planetenverteidigungskanonenkommandant",
+          "comment": "2027"
+        },
+        {
+          "id": 18,
+          "title": "Persona 4: Revival",
+          "comment": "18.02.2027"
+        },
+        {
+          "id": 19,
+          "title": "No Rest For the Wicked",
+          "comment": "OCT 2026"
+        },
+        {
+          "id": 20,
+          "title": "Silent Hill Townfall",
+          "comment": "sep 24 2026"
         }
-      ],
-      "items": [
-        { "id": 1, "title": "GTA 6", "comment": "19 november" },
-        { "id": 2, "title": "Croak", "comment": "" },
-        { "id": 3, "title": "Fable", "comment": "Feb 2027" },
-        { "id": 4, "title": "The button effect", "comment": "Q1 2027" },
-        { "id": 5, "title": "Order of the sinking star", "comment": "8 oct 2026" },
-        { "id": 6, "title": "Wolverine(PS5)", "comment": "September 15" },
-        { "id": 7, "title": "STAR WARS: Galactic Racer™", "comment": "6 october 2026" },
-        { "id": 8, "title": "The eternal life of goldman", "comment": "" },
-        { "id": 9, "title": "Intergalactic: The Heretic Prophet", "comment": "" },
-        { "id": 10, "title": "Star Wars: Zero Company", "comment": "aug 27 2026" },
-        { "id": 11, "title": "Clive Barker's Hellraiser: Revival", "comment": "" },
-        { "id": 12, "title": "End of Abyss", "comment": "oct 1 2026" },
-        { "id": 13, "title": "Gilt", "comment": "" },
-        { "id": 14, "title": "Bradley the badger", "comment": "" },
-        { "id": 15, "title": "Judas", "comment": "" },
-        { "id": 16, "title": "Clockwork Revolution", "comment": "2027" },
-        { "id": 17, "title": "PVKK: Planetenverteidigungskanonenkommandant", "comment": "2027" },
-        { "id": 18, "title": "Persona 4: Revival", "comment": "18.02.2027" },
-        { "id": 19, "title": "No Rest For the Wicked", "comment": "OCT 2026" },
-        { "id": 20, "title": "Silent Hill Townfall", "comment": "sep 24 2026" }
       ],
       "subsections": [
         {
           "id": "unannounced",
           "title": "Unannounced tentative list",
-          "itemDefinition": [
+          "items": [
             {
-              "name": "title",
-              "type": "string",
-              "comment": "Name of the game."
+              "id": 1,
+              "title": "Jedi 3",
+              "comment": ""
             },
             {
-              "name": "comment",
-              "type": "string",
-              "comment": "Additional notes."
+              "id": 2,
+              "title": "Persona 6",
+              "comment": ""
+            },
+            {
+              "id": 3,
+              "title": "Half-Life 3",
+              "comment": ""
             }
-          ],
-          "items": [
-            { "id": 1, "title": "Jedi 3", "comment": "" },
-            { "id": 2, "title": "Persona 6", "comment": "" },
-            { "id": 3, "title": "Half-Life 3", "comment": "" }
           ]
         }
       ]

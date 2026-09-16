@@ -21,12 +21,20 @@ export class Dialog<T> implements AfterViewInit {
   open = input.required<boolean>();
   saveLabel = input<string>();
   cancelLabel = input<string>();
+  private dialogRef?: ReturnType<MatDialog['open']>;
+  private closingProgrammatically = false;
 
   constructor() {
     effect(() => {
-      this.open();
-      if (this.dialogTemplate && this.open()) {
+      const isOpen = this.open();
+      if (!this.dialogTemplate) {
+        return;
+      }
+      if (isOpen) {
         this.openDialog();
+      } else if (this.dialogRef) {
+        this.closingProgrammatically = true;
+        this.dialogRef.close();
       }
     });
   }
@@ -36,14 +44,19 @@ export class Dialog<T> implements AfterViewInit {
   }
 
   openDialog() {
-    if (!this.open()) {
+    if (!this.open() || this.dialogRef) {
       return;
     }
 
     const dialogRef = this.dialog.open(this.dialogTemplate);
+    this.dialogRef = dialogRef;
 
     dialogRef.afterClosed().subscribe(result => {
-      this.cancel.emit();
+      this.dialogRef = undefined;
+      if (!this.closingProgrammatically) {
+        this.cancel.emit();
+      }
+      this.closingProgrammatically = false;
       console.log(`Dialog result: ${result}`);
     });
   }

@@ -17,6 +17,7 @@ import { computeGitBlobSha } from '../shared/shared.utils';
 import { RouterLinkActive } from "@angular/router";
 import { Sidebar } from "./sidebar/sidebar";
 import { Header } from "./header/header";
+import { SectionEditor } from './section-editor/section-editor';
 interface Row {
   id: number;
   name: string;
@@ -26,7 +27,7 @@ interface Row {
 }
 @Component({
   selector: 'app-lists',
-  imports: [MatTableModule, MatButtonModule, MatIconModule, Editor, Dialog, MatFormFieldModule, MatInputModule, MatSelectModule, CdkDropList, CdkDrag, CdkDragHandle, Header],
+  imports: [MatTableModule, MatButtonModule, MatIconModule, Editor, Dialog, MatFormFieldModule, MatInputModule, MatSelectModule, CdkDropList, CdkDrag, CdkDragHandle, Header, SectionEditor],
   templateUrl: './lists.html',
   styleUrl: './lists.css',
 })
@@ -40,13 +41,15 @@ export class Lists {
   openEditorDialog = signal(false);
   delete = signal<{ sectionId: string; itemId: number, title: string } | null>(null);
   selectedSectionId = this.dataService.selectedSectionId;
-
+  openSectionEditorDialog = signal(false);
   pages = computed(() => this.dataService.pages());
   data = this.dataService.data;
 
+
+
   selectedSection = signal<ListSection | null>(null);
 
-  columns = computed(() => ['position', ...this?.data()?.sections?.[0]?.itemDefinition.map(item => item.name) ?? [], 'actions']);
+  columns = computed(() => ['position', ...(this?.data()?.itemDefinition?.map(item => item.name) ?? []), 'actions']);
 
   constructor() {
 
@@ -96,6 +99,19 @@ export class Lists {
   //   });
   // }
 
+  onSectionSave(listSections:ListSection[]) {
+    console.log('Section saved:', listSections);
+    this.dataService.updateSections(listSections).subscribe(
+      (response) => {
+        console.log('Update successful:', response);
+        this.openSectionEditorDialog.set(false);
+      },
+      (error) => {
+        console.error('Update failed:', error);
+        this.openSectionEditorDialog.set(false);
+      }
+    );
+  }
 
   openEditor(mode: 'EDIT' | 'CREATE', section: ListSection | null = null, item: ListItem | null = null) {
     this.mode.set(mode);

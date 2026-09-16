@@ -1,0 +1,63 @@
+<app-dialog title="Section Editor" [open]="open() && !innerOpen() && !deleteId()" (cancel)="onCancel()" (save)="onSave()">
+
+    <div style="display:flex;flex-direction:column;">
+        <table mat-table [dataSource]="editSections() || []" class="mat-elevation-z2" cdkDropList
+            (cdkDropListDropped)="drop($event)" cdkDropListData="dataSource">
+            <ng-container matColumnDef="position" sticky>
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td cdkDragHandle mat-cell *matCellDef="let element;let index = index">
+                    <span style="display:inline-flex;align-items:center;">
+                        <mat-icon class="example-drag-cursor">reorder</mat-icon>
+                        <span style="margin-left: 10px;">{{index + 1}}</span>
+                    </span>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let row">{{ row.title }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef>Actions</th>
+                <td mat-cell *matCellDef="let row; let i = index">
+                    <button (click)="openDialog(row.id)" style="width:28px;height:28px;" matMiniFab
+                        aria-label="Example icon button with a menu icon">
+                        <mat-icon style="font-size: 20px;width:20px;height:20px;">edit</mat-icon>
+                    </button>
+                    <button (click)="openDeleteDialog(row.id, row.title)"
+                    matMiniFab style="margin-left: 8px;width:28px;height:28px;"
+                    aria-label="Example icon button with a menu icon">
+                    <mat-icon style="font-size: 20px;width:20px;height:20px;">delete</mat-icon>
+                </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row style="position: sticky; top: 0;z-index: 999;" *matHeaderRowDef="columns"></tr>
+            <tr mat-row cdkDrag [cdkDragData]="row" *matRowDef="let row; columns: columns;"></tr>
+        </table>
+        <br />
+
+        <button (click)="openDialog()" matMiniFab
+        style="position:sticky;bottom:16px;margin-left: auto;margin-right: 16px;width:35px;height:35px;"
+        aria-label="Example icon button with a menu icon">
+        <mat-icon style="font-size: 35px;width:35px;height:35px;">add</mat-icon>
+    </button>
+
+    </div>
+
+
+
+</app-dialog>
+
+
+<app-dialog title="Section Editor" [open]="innerOpen()" (cancel)="onDialogCancel()" (save)="onDialogSave()">
+    <mat-form-field style="min-width: 100%;" class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Enter name" [ngModel]="editName()" (ngModelChange)="editName.set($event)">
+    </mat-form-field>
+</app-dialog>
+
+<app-dialog title="Delete Section" [open]="!!deleteId()" (cancel)="closeDeleteDialog()" saveText="Ok" (save)="onDeleteConfirm()">
+    Are you sure you want to delete this section: "{{ deleteTitle() }}"?
+</app-dialog>

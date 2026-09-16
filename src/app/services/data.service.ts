@@ -1,6 +1,6 @@
 import { computed, DestroyRef, effect, inject, Injectable, signal } from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
-import { List, ObjectSnapshot } from "./models/data.model";
+import { List, ListSection, ObjectSnapshot } from "./models/data.model";
 import { DatabaseService } from "./database.service";
 import { GithubService } from "./github.service";
 import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
@@ -60,7 +60,7 @@ export class DataService {
     constructor() {
 
         effect(() => {
-            if (this.page()) {
+            if (this.page() && !this.selectedSectionId() || (this.selectedSectionId() && !this.data()?.sections?.some(section => section.id === this.selectedSectionId()))) {
                 this.selectedSectionId.set(this.data()?.sections?.[0]?.id || null);
             }
         });
@@ -106,7 +106,7 @@ export class DataService {
     }
 
 
-    updateRow(sectionId: string, itemId: number, newData: any) :Observable<void>{
+    updateRow(sectionId: string, itemId: number, newData: any): Observable<void> {
         const sectionIndex = this.data()?.sections?.findIndex(section => section.id === sectionId);
         if (sectionIndex === undefined || sectionIndex < 0) {
             throw new Error(`Section with ID ${sectionId} not found`);
@@ -173,6 +173,21 @@ export class DataService {
         newData.id = items.length > 0 ? Math.max(...items.map(item => +item.id)) + 1 : 1;
         items.push(newData);
         updatedSections[sectionIndex] = { ...updatedSections[sectionIndex], items };
+
+        const page = this.getPage();
+        this.snapshots.update(current =>
+            (current ?? []).map(snapshot =>
+                snapshot.name === page
+                    ? { ...snapshot, data: { ...snapshot.data, sections: updatedSections } }
+                    : snapshot
+            )
+        );
+        return this.databaseService.replaceDataForObject(page!, { ...this.currentSnapshot()! });
+    }
+
+
+    updateSections(listSections: ListSection[]): Observable<void> {
+        const updatedSections = [...(listSections ?? [])];
 
         const page = this.getPage();
         this.snapshots.update(current =>

@@ -20,7 +20,6 @@ export type ListSection = {
   id: string;
   title: string;
   comment?: string;
-  itemDefinition: ListField[];
   items: ListItem[];
 };
 
@@ -29,7 +28,7 @@ export type List = {
     name: string;
     comment?: string;
   };
-
+  itemDefinition: ListField[];
   sections: ListSection[];
 };
 

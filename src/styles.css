@@ -25,3 +25,20 @@ body {
 pre {
   font-family: "IBM Plex Sans", sans-serif;
 }
+
+/* When multiple CDK dialogs are stacked, only show the top-most one */
+/* .cdk-overlay-pane {
+  display: none;
+} */
+
+.cdk-overlay-pane:last-of-type {
+  display: flex;
+}
+
+/* .cdk-overlay-backdrop {
+  display: none;
+} */
+
+.cdk-overlay-backdrop:last-of-type {
+  display: block;
+}

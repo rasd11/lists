@@ -9,7 +9,7 @@ import { Editor } from "./lists/editor/editor";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Lists],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

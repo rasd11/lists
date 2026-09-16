@@ -3,23 +3,23 @@
     "name": "Games",
     "comment": "My finished games and personal rankings, organized by year and category."
   },
+  "itemDefinition": [
+    {
+      "name": "title",
+      "type": "string",
+      "comment": "Name of the game."
+    },
+    {
+      "name": "comment",
+      "type": "string",
+      "comment": "Additional notes about the game."
+    }
+  ],
   "sections": [
     {
       "id": "2026",
       "title": "2026",
       "type": "year",
-      "itemDefinition": [
-        {
-          "name": "title",
-          "type": "string",
-          "comment": "Name of the game."
-        },
-        {
-          "name": "comment",
-          "type": "string",
-          "comment": "Additional notes about the game."
-        }
-      ],
       "items": [
         {
           "id": 1,
@@ -106,18 +106,6 @@
         {
           "id": "replayed",
           "title": "Replayed",
-          "itemDefinition": [
-            {
-              "name": "title",
-              "type": "string",
-              "comment": "Name of the game."
-            },
-            {
-              "name": "comment",
-              "type": "string",
-              "comment": "Additional notes about the replay."
-            }
-          ],
           "items": [
             {
               "id": 1,
@@ -132,18 +120,6 @@
       "id": "2025",
       "title": "2025",
       "type": "year",
-      "itemDefinition": [
-        {
-          "name": "title",
-          "type": "string",
-          "comment": "Name of the game."
-        },
-        {
-          "name": "comment",
-          "type": "string",
-          "comment": "Additional notes about the game."
-        }
-      ],
       "items": [
         {
           "id": 1,
@@ -320,18 +296,6 @@
         {
           "id": "replayed",
           "title": "Replayed",
-          "itemDefinition": [
-            {
-              "name": "title",
-              "type": "string",
-              "comment": "Name of the game."
-            },
-            {
-              "name": "comment",
-              "type": "string",
-              "comment": "Additional notes about the replay."
-            }
-          ],
           "items": [
             {
               "id": 1,
@@ -351,18 +315,6 @@
       "id": "2024",
       "title": "2024",
       "type": "year",
-      "itemDefinition": [
-        {
-          "name": "title",
-          "type": "string",
-          "comment": "Name of the game."
-        },
-        {
-          "name": "comment",
-          "type": "string",
-          "comment": "Additional notes about the game."
-        }
-      ],
       "items": [
         {
           "id": 1,
@@ -515,18 +467,6 @@
       "id": "2023",
       "title": "2023",
       "type": "year",
-      "itemDefinition": [
-        {
-          "name": "title",
-          "type": "string",
-          "comment": "Name of the game."
-        },
-        {
-          "name": "comment",
-          "type": "string",
-          "comment": "Additional notes about the game."
-        }
-      ],
       "items": [
         {
           "id": 1,
@@ -630,18 +570,6 @@
       "title": "UNKNOWN",
       "type": "year",
       "comment": "Finished in previous years, order is random for now.",
-      "itemDefinition": [
-        {
-          "name": "title",
-          "type": "string",
-          "comment": "Name of the game."
-        },
-        {
-          "name": "comment",
-          "type": "string",
-          "comment": "Additional notes about the game."
-        }
-      ],
       "items": [
         {
           "id": 1,
@@ -1144,18 +1072,6 @@
       "id": "point-and-click",
       "title": "Top Finished point and click games",
       "type": "ranking",
-      "itemDefinition": [
-        {
-          "name": "title",
-          "type": "string",
-          "comment": "Name of the game."
-        },
-        {
-          "name": "comment",
-          "type": "string",
-          "comment": "Additional notes about the game."
-        }
-      ],
       "items": [
         {
           "id": 1,
@@ -1303,18 +1219,6 @@
       "id": "puzzle",
       "title": "Top puzzle games",
       "type": "ranking",
-      "itemDefinition": [
-        {
-          "name": "title",
-          "type": "string",
-          "comment": "Name of the game."
-        },
-        {
-          "name": "comment",
-          "type": "string",
-          "comment": "Additional notes about the game. Difficulty is rated from 1 to 5."
-        }
-      ],
       "items": [
         {
           "id": 1,
@@ -1547,18 +1451,6 @@
       "id": "platformers",
       "title": "Top finished platformers",
       "type": "ranking",
-      "itemDefinition": [
-        {
-          "name": "title",
-          "type": "string",
-          "comment": "Name of the game."
-        },
-        {
-          "name": "comment",
-          "type": "string",
-          "comment": "Additional notes about the game."
-        }
-      ],
       "items": [
         {
           "id": 1,
