@@ -1,10 +1,11 @@
 @if (data()) {
 
 
-@if (selectedSection()!==null&&data()?.sections) {
 <div style="display:flex;flex-direction:column;">
     <app-header></app-header>
-    <table mat-table [dataSource]="selectedSection()!.items" class="mat-elevation-z2" cdkDropList
+
+    @if (this.data()?.sections && this.data()?.sections?.length) {
+    <table mat-table [dataSource]="selectedSection()!.items||[]" class="mat-elevation-z2" cdkDropList
         (cdkDropListDropped)="drop($event)" cdkDropListData="dataSource">
         <ng-container matColumnDef="position" sticky>
             <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -21,8 +22,8 @@
             <th mat-header-cell *matHeaderCellDef>{{ item.name }}</th>
             <td mat-cell *matCellDef="let row">{{ row[item.name] }}</td>
         </ng-container>
-
         }
+
         <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef>Actions</th>
             <td mat-cell *matCellDef="let row; let i = index">
@@ -43,6 +44,11 @@
         <tr mat-header-row style="position: sticky; top: 0;z-index: 999;" *matHeaderRowDef="columns()"></tr>
         <tr mat-row cdkDrag [cdkDragData]="row" *matRowDef="let row; columns: columns();"></tr>
     </table>
+    }
+    @else {
+    <p style="margin:auto">No sections available</p>
+    }
+
     <br />
 
     <button (click)="openEditor('CREATE',selectedSection(),null)" matMiniFab
@@ -52,22 +58,14 @@
     </button>
 </div>
 }
-}
 @else {
 <p>Data not loaded yet</p>
 }
 
-<button (click)="openSectionEditorDialog.set(true)" matMiniFab
-    style="position:sticky;bottom:16px;margin-left: auto;margin-right: 16px;width:35px;height:35px;"
-    aria-label="Example icon button with a menu icon">
-    <mat-icon style="font-size: 35px;width:35px;height:35px;">add</mat-icon>
-</button>
-
 <app-editor (cancel)="onCancel()" (save)="onSave($event)" [open]="openEditorDialog()" [mode]="mode()"
     [definition]="data()?.itemDefinition || null" [data]="editItem()"></app-editor>
 
-<app-section-editor (cancel)="openSectionEditorDialog.set(false)" [open]="openSectionEditorDialog()"
-    (save)="onSectionSave($event||[])"></app-section-editor>
+
 
 @if (delete() !== null) {
 <app-dialog (cancel)="delete.set(null)" (save)="onDeleteConfirmed()" [open]="delete() !== null" title="Confirm Delete"
@@ -75,3 +73,5 @@
     <p>Are you sure you want to delete item with title "{{ delete()?.title }}"?</p>
 </app-dialog>
 }
+
+<p>Sync status: {{ isSynced() ? 'Synced' : 'Not Synced' }}</p>

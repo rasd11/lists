@@ -41,8 +41,9 @@ export class Lists {
   openEditorDialog = signal(false);
   delete = signal<{ sectionId: string; itemId: number, title: string } | null>(null);
   selectedSectionId = this.dataService.selectedSectionId;
-  openSectionEditorDialog = signal(false);
+
   pages = computed(() => this.dataService.pages());
+  isSynced = computed(() => this.dataService.isSynced());
   data = this.dataService.data;
 
 
@@ -99,19 +100,7 @@ export class Lists {
   //   });
   // }
 
-  onSectionSave(listSections:ListSection[]) {
-    console.log('Section saved:', listSections);
-    this.dataService.updateSections(listSections).subscribe(
-      (response) => {
-        console.log('Update successful:', response);
-        this.openSectionEditorDialog.set(false);
-      },
-      (error) => {
-        console.error('Update failed:', error);
-        this.openSectionEditorDialog.set(false);
-      }
-    );
-  }
+
 
   openEditor(mode: 'EDIT' | 'CREATE', section: ListSection | null = null, item: ListItem | null = null) {
     this.mode.set(mode);

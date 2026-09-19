@@ -1,10 +1,10 @@
 import { computed, DestroyRef, effect, inject, Injectable, signal } from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
-import { List, ListSection, ObjectSnapshot } from "./models/data.model";
+import { List, ListSection, ObjectSnapshot, PageEditData } from "./models/data.model";
 import { DatabaseService } from "./database.service";
 import { GithubService } from "./github.service";
 import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
-import { filter, map, Observable, startWith } from "rxjs";
+import { concatMap, filter, forkJoin, map, Observable, of, startWith, switchMap, tap } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -37,6 +37,7 @@ export class DataService {
         if (!snapshot) return false;
         return snapshot.lastModified <= snapshot.syncDate;
     });
+    syncStatus = signal<Map<string, boolean>>(new Map());
 
 
     private page = toSignal(this.router.events.pipe(
@@ -60,6 +61,13 @@ export class DataService {
     constructor() {
 
         effect(() => {
+            if (this.snapshots()?.length ?? 0 > 0) {
+                this.syncStatus.set(new Map(this.snapshots()?.map(snapshot => [snapshot.name, snapshot.syncDate.getTime() - snapshot.lastModified.getTime() > 10000]) ?? []));
+            }
+        });
+
+
+        effect(() => {
             if (this.page() && !this.selectedSectionId() || (this.selectedSectionId() && !this.data()?.sections?.some(section => section.id === this.selectedSectionId()))) {
                 this.selectedSectionId.set(this.data()?.sections?.[0]?.id || null);
             }
@@ -71,38 +79,94 @@ export class DataService {
             }
         });
 
-        const availableLists$ = this.githubService.getAvailableLists().subscribe(pages => {
-            this.pages.set(pages);
-            for (const page of pages) {
-                console.log('Fetching data for page:', page);
-                this.databaseService.getDataForObject(page).subscribe(snapshots => {
-                    console.log(snapshots);
-                    if (!snapshots?.data) {
-                        this.githubService.getListData(page).subscribe(fetchedData => {
-                            // debugger;
-                            const currentDate = new Date();
-                            this.snapshots.update(current => [...(current ?? []), {
-                                data: {
-                                    ...fetchedData,
-                                },
-                                sha: "",
-                                name: page,
-                                lastModified: currentDate,
-                                syncDate: currentDate
-                            }]);
-                        });
-                    }
-                    else {
-                        console.log(snapshots);
-                        this.snapshots.update(current => [...(current ?? []), { ...snapshots }]);
-                    }
-                });
+
+        effect(() => {
+            if (this.snapshots()) {
+                this.pages.set(this.snapshots()?.map(snapshot => snapshot.name) ?? []);
             }
         });
 
-        this.destroyRef.onDestroy(() => {
-            availableLists$.unsubscribe();
+
+        forkJoin([
+            this.databaseService.getAllPages(),
+            this.githubService.getAvailableLists()
+        ]).pipe(
+            switchMap(([databaseData, githubData]) => {
+                // const extraGithubPages = githubData.filter(page => !databaseData.some(snapshot => snapshot.name === page.name));
+                const newDatabasePages = databaseData.filter(snapshot => !githubData.some(page => page.name === snapshot.name));
+                const modifiedDatabasePages = databaseData.filter(snapshot => snapshot.syncDate < snapshot.lastModified && githubData.some(page => page.name === snapshot.name));
+                const oldUnmodifiedDatabasePages = databaseData.filter(snapshot => Math.abs(snapshot.syncDate.getTime() - snapshot.lastModified.getTime()) < 1000 && Date.now() - snapshot.lastModified.getTime() < 3 * 24 * 60 * 60 * 1000 && githubData.some(page => page.name === snapshot.name));
+                const oldExpiredDatabasePages = databaseData.filter(snapshot => Math.abs(snapshot.syncDate.getTime() - snapshot.lastModified.getTime()) < 1000 && Date.now() - snapshot.lastModified.getTime() > 3 * 24 * 60 * 60 * 1000);
+                const requests = oldExpiredDatabasePages.map(snapshot =>
+                    this.githubService.getListData(snapshot.name)
+                );
+                debugger;
+
+                if (requests.length === 0) {
+                    return of([
+                        ...oldUnmodifiedDatabasePages,
+                        ...newDatabasePages,
+                        ...modifiedDatabasePages
+                    ]);
+                }
+                return forkJoin(requests).pipe(
+                    map(refreshedPages => [
+                        ...oldUnmodifiedDatabasePages,
+                        ...newDatabasePages,
+                        ...modifiedDatabasePages,
+                        ...refreshedPages
+                    ])
+                );
+            })
+        ).subscribe(pages => {
+            this.snapshots.set(pages);
+            console.log('Fetched pages:', pages);
         });
+
+
+        if (1 === 1) return;
+        // const availableLists$ = this.githubService.getAvailableLists().subscribe(pages => {
+        //     // this.pages.set(pages);
+        //     return this.databaseService.getAllPages().subscribe(pagesData => {
+        //         console.log('All pages data:', pagesData);
+        //         this.snapshots.set(pagesData);
+        //     });
+
+
+
+
+        //     if (1 == 1) return;
+
+        //     for (const page of pages) {
+        //         console.log('Fetching data for page:', page);
+        //         this.databaseService.getDataForObject(page).subscribe(snapshots => {
+        //             console.log(snapshots);
+        //             if (!snapshots?.data) {
+        //                 this.githubService.getListData(page).subscribe(fetchedData => {
+        //                     // debugger;
+        //                     const currentDate = new Date();
+        //                     this.snapshots.update(current => [...(current ?? []), {
+        //                         data: {
+        //                             ...fetchedData,
+        //                         },
+        //                         sha: "",
+        //                         name: page,
+        //                         lastModified: currentDate,
+        //                         syncDate: currentDate
+        //                     }]);
+        //                 });
+        //             }
+        //             else {
+        //                 console.log(snapshots);
+        //                 this.snapshots.update(current => [...(current ?? []), { ...snapshots }]);
+        //             }
+        //         });
+        //     }
+        // });
+
+        // this.destroyRef.onDestroy(() => {
+        //     availableLists$.unsubscribe();
+        // });
     }
 
 
@@ -133,6 +197,9 @@ export class DataService {
         return this.databaseService.replaceDataForObject(page!, { ...this.currentSnapshot()! });
 
     }
+
+
+
 
     moveRow(sectionId: string, previousIndex: number, newIndex: number): Observable<void> {
         const sectionIndex = this.data()?.sections?.findIndex(section => section.id === sectionId);
@@ -267,6 +334,45 @@ export class DataService {
         if (!current) return;
         this.githubService.modifyListData(current.name, current.data);
     }
+
+    updatePages(pages: PageEditData[]): Observable<void> {
+        this.snapshots.update(current => {
+            let modifiedSnapshots = [...current ?? []];
+            modifiedSnapshots = modifiedSnapshots.filter(snapshot => pages.some(p => p.id !== snapshot.data.id));
+            modifiedSnapshots = modifiedSnapshots.map(snapshot => {
+                const page = pages.find(p => p.id === snapshot.data.id);
+                return page ? { ...snapshot, metadata: { ...page.metadata }, itemDefinition: [...(page.itemDefinition ?? [])], data: { ...snapshot.data } } : snapshot;
+            });
+            pages.filter(p => !modifiedSnapshots.some(snapshot => snapshot.data.id === p.id))
+                .forEach(p => {
+                    const data = {
+                        id: p.id,
+                        metadata: { ...p.metadata },
+                        itemDefinition: [...(p.itemDefinition ?? [])],
+                        sections: []
+                    };
+                    modifiedSnapshots.push({
+                        name: p.metadata.name,
+                        data: data,
+                        lastModified: new Date(),
+                        sha: '',
+                        syncDate: new Date()
+                    });
+                });
+
+            return modifiedSnapshots;
+        });
+
+        if (this.snapshots()) {
+            return this.databaseService.updateDatabases(this.snapshots() ?? []).pipe(map(() => undefined));
+        }
+        return of(undefined);
+
+
+
+    }
+
+
 
 
 

@@ -1,15 +1,24 @@
 <div style="display:flex;flex-direction:row; align-items: center;">
     <div style=" display: flex; justify-content: center; align-items: center;">
         <app-sidebar></app-sidebar>
-        <h2>{{ selectedSection()?.title }}</h2>
+        <h2>{{ selectedSection()?.title||'No Section defined' }}</h2>
+        <button matIconButton [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="openSectionEditorDialog.set(true)">
+                <mat-icon>edit</mat-icon>
+                <span>Section Editor</span>
+            </button>
+            <button mat-menu-item (click)="openPageEditorDialog.set(true)">
+                <mat-icon>folder</mat-icon>
+                <span>Page Editor</span>
+            </button>
+        </mat-menu>
     </div>
     <div style="margin-left: auto; display: flex; justify-content: center; align-items: center;">
-        <button style="margin-left: auto;" matButton="elevated">Add Section</button>
-        <button style="margin-left: auto;" matButton="elevated">Delete Section</button>
         <mat-form-field style="margin-left: auto;">
             <mat-label>Section</mat-label>
-
-
             <mat-select [(value)]="selectedSectionId">
                 @for (d of data()?.sections; track d.id) {
                 <mat-option style="min-width: 100%;" routerLinkActive="test" [value]="d.id">{{d.title}}</mat-option>
@@ -18,3 +27,11 @@
         </mat-form-field>
     </div>
 </div>
+
+
+<app-section-editor (cancel)="openSectionEditorDialog.set(false)" [open]="openSectionEditorDialog()"
+    (save)="onSectionSave($event||[])"></app-section-editor>
+
+
+<app-page-editor (cancel)="openPageEditorDialog.set(false)" [open]="openPageEditorDialog()"
+    (save)="onPageSave($event||[])"></app-page-editor>

@@ -1,5 +1,5 @@
 import { inject, Injectable } from "@angular/core";
-import type { List } from "./models/data.model";
+import type { List, ObjectSnapshot } from "./models/data.model";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
@@ -28,18 +28,24 @@ export class GithubService {
 
     private http = inject(HttpClient);
 
-    getAvailableLists(): Observable<string[]> {
+    getAvailableLists(): Observable<GithubContentEntry[]> {
         return this.http.get<GithubContentEntry[]>(CONTENTS_URL).pipe(
             map((entries) => entries
                 .filter((entry) => entry.type === 'file' && entry.name.endsWith(''))
-                .map((entry) => entry.name)
+
             )
         );
     }
 
-    getListData(listName: string): Observable<List> {
+    getListData(listName: string): Observable<ObjectSnapshot<List>> {
         return this.http.get<GithubFileContent>(`${CONTENTS_URL}/${listName}`).pipe(
-            map((file) => JSON.parse(atob(file.content)) as List)
+            map((file) => ({
+                lastModified: new Date(),
+                syncDate: new Date(),
+                sha: file.sha,
+                name: listName,
+                data: JSON.parse(atob(file.content))
+            }))
         );
     }
 

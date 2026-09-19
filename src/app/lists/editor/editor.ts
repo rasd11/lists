@@ -30,11 +30,13 @@ export class Editor {
   }
 
   onCancel() {
+    this.inputData.set({});
     this.cancel.emit();
   }
 
   onSave() {
     this.save.emit(this.inputData());
+    this.inputData.set({});
   }
 
 }

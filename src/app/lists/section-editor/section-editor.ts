@@ -32,6 +32,8 @@ export class SectionEditor {
   editName = signal('');
   deleteId = signal<string | null>(null);
   deleteTitle = signal<string | null>(null);
+  dataModified = signal(false);
+
 
   openDialog(id?: string) {
     this.editId.set(id ?? null);
@@ -42,6 +44,7 @@ export class SectionEditor {
 
   drop(event: CdkDragDrop<string, any, any>) {
 
+    this.dataModified.set(true);
     this.editSections.update(sections => {
       if (!sections) return sections;
       const copy = [...sections];
@@ -73,12 +76,13 @@ export class SectionEditor {
   }
 
   onCancel() {
+    this.dataModified.set(false);
     this.cancel.emit();
   }
 
   onDialogSave() {
     this.innerOpen.set(false);
-    
+    this.dataModified.set(true);
 
     console.log(this.editSections());
     if (!this?.editId()) {
@@ -119,6 +123,7 @@ export class SectionEditor {
   }
 
   onSave() {
+    this.dataModified.set(false);
     this.innerOpen.set(false);
     this.save.emit(this.editSections());
   }
@@ -134,6 +139,7 @@ export class SectionEditor {
   }
 
   onDeleteConfirm() {
+    this.dataModified.set(true);
     const id = this.deleteId();
     if (id) {
       this.editSections.update(sections => sections ? sections.filter(section => section.id !== id) : null);

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { List, ObjectSnapshot } from "./models/data.model";
-import { Observable } from "rxjs";
+import { forkJoin, from, map, Observable, switchMap } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -82,6 +82,7 @@ export class DatabaseService {
                         const transaction = db.transaction(objectName, "readwrite");
                         const objectStore = transaction.objectStore(objectName);
                         const putRequest = objectStore.put(newData, objectName);
+                        newData.syncDate = new Date();
                         putRequest.onsuccess = () => {
                             subscriber.next();
                             subscriber.complete();
@@ -95,6 +96,28 @@ export class DatabaseService {
                     }
                 });
         });
+    }
+
+    updateDatabases(newDataBases: ObjectSnapshot<List>[]): Observable<void[]> {
+        return new Observable((subscriber) => {
+            this.databases.clear();
+            forkJoin(newDataBases.map(newData => this.replaceDataForObject(newData.name, newData)))
+                .subscribe({
+                    next: (results) => {
+                        subscriber.next(results);
+                        subscriber.complete();
+                    },
+                    error: (error) => {
+                        subscriber.error(error);
+                    }
+                });
+        });
+    }
+
+    getAllPages(): Observable<ObjectSnapshot<List>[]> {
+        return from(indexedDB.databases()).pipe(
+            switchMap(databases => forkJoin(databases.map(db => this.getDataForObject(db.name ?? ''))))
+        );
     }
 
 }

@@ -24,6 +24,7 @@ export type ListSection = {
 };
 
 export type List = {
+  id: number;
   metadata: {
     name: string;
     comment?: string;
@@ -34,8 +35,12 @@ export type List = {
 
 export type ObjectSnapshot<T> = {
   data: T;
-  name:string;
+  name: string;
   sha: string;
   syncDate: Date;
   lastModified: Date;
 };
+
+
+export type PageEditData = Omit<List, 'sections'>;
+
